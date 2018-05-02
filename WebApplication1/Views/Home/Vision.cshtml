@@ -1,0 +1,36 @@
+﻿@{
+                /**/
+
+
+                ViewBag.Title = "Cognitive Vision";
+
+}
+
+<br />
+@using (Html.BeginForm("Vision", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+
+{
+
+<div>
+
+    Select Image
+
+    <input class="btn btn-default" type="file" name="file" />&nbsp;&nbsp;&nbsp;
+    <input class="btn btn-default" type="submit" value="Analyse" name="Command" /><br />
+    <br />
+
+</div>
+    <div class="row">
+        <div class="col-md-6">
+            <img src="@ViewBag.ImagPath" style="height:300px;" />
+        </div>
+        <div class="col-md-6">
+            <pre>
+            @ViewBag.analysisJson
+            </pre>
+        </div>
+    </div>
+}
+
+<br /><br />
+<a href="https://azure.microsoft.com/en-us/services/cognitive-services/computer-vision/">Computer Vision</a>
